@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 弾が画面端に到達したときに反射するようにする
 public class enemy_bullet_reflect : MonoBehaviour
 {
-
+    // 上・右・左・下の端の情報を格納する
     private float border_Left;
     private float border_Right;
     private float border_Uppor;
@@ -24,6 +25,7 @@ public class enemy_bullet_reflect : MonoBehaviour
 
     void Update()
     {
+        //それぞれの画面端に到達したときの反射処理
         if (border_Left >= this.transform.position.x || border_Right <= this.transform.position.x)
         {
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(this.GetComponent<Rigidbody2D>().velocity.x * -1, this.GetComponent<Rigidbody2D>().velocity.y);

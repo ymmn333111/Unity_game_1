@@ -2,22 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// enemy_bom‚ª“K“–‚ÈŠÔŒã‚ÉŠgU‚·‚éUŒ‚‚ªo‚é‚æ‚¤‚É‚·‚éˆ—
 public class enemy_bom_action : MonoBehaviour
 {
+    // enemy‚Ìbom‚Ìí—Ş
     public GameObject bom;
+    // bom‚©‚çŠgU‚³‚ê‚éUŒ‚‚Ìí—Ş
     public GameObject bom_power;
+    // bom‚ª“Š‰º‚³‚ê‚Ä‚©‚çŠgU‚³‚ê‚é‚Ü‚Å‚ÌŠÔ‚Ìİ’è
     public float min_time = 2f;
     public float max_time = 8f;
+    // bom‚ª“Š‰º‚³‚ê‚Ä‚©‚çŠgU‚³‚ê‚éŠÔ
     private float action_time;
+    // ŠgU‚³‚ê‚éUŒ‚‚ÌŠp“x
     public float angle;
+    // ŠgU‚³‚ê‚éUŒ‚‚Ì”
     public int power_num = 8;
+    // ŠgU‚³‚ê‚éUŒ‚‚Ì‘¬“x
     public float power_speed = 10f;
     private float time;
     void Start()
     {
         time = 0f;
+        //bom‚ª“Š‰º‚³‚ê‚Ä‚©‚çŠgU‚³‚ê‚é‚Ü‚Å‚ÌŠÔ‚ÌŒˆ’è
         action_time = Random.Range(min_time, max_time);
     }
+
+    // ŠgUUŒ‚‚ÌŠp“xˆ—
     public static Vector2 AngleToVector2(float angle)
     {
         var radian = angle * (Mathf.PI / 180);
@@ -27,6 +38,7 @@ public class enemy_bom_action : MonoBehaviour
     {
         if (time > action_time)
         {
+            // bom‚ª“Š‰º‚³‚ê‚Ä‚©‚çŠgU‚·‚éUŒ‚‚Ìˆ—
             for (int i = 0; i < power_num; i++)
             {
                 GameObject new_bullet = Instantiate(bom_power, bom.transform.position, transform.rotation);

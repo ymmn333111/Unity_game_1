@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// enemy_bullet2‚Æ“¯—l
 public class enemy_bullet4 : MonoBehaviour
 {
+    
     public GameObject Enemy;
     public GameObject bullet3;
     public GameObject muzzle;
